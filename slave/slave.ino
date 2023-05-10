@@ -10,7 +10,11 @@ int pinoBotao = 2;
 int estadoBotao = 0;
 void setup() {
   // put your setup code here, to run once:
-
+  pinMode(pinoBotao,INPUT_PULLUP);
+  radio.begin();
+  radio.openWritingPipe(endereco);
+  radio.setPALevel(RF24_PA_HIGH);
+  radio.stopListening();
 }
 
 void loop() {
